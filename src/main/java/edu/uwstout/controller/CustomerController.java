@@ -1,5 +1,8 @@
 package edu.uwstout.controller;
 import java.util.HashMap;
+import java.util.List;
+
+import edu.uwstout.helpers.*;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicLong;
@@ -10,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 @RestController
 /*
  * Controller for actions taken by customer users
@@ -20,7 +25,14 @@ public class CustomerController {
      */
     @RequestMapping(value = "/queryForList" , method = RequestMethod.POST)
     public @ResponseBody String addNewWorker(@RequestBody String jsonString) {
-    	System.out.println(jsonString);
-        return "";
+    	List<Advertisement> advertisments = AdvertisementJSONReader.readAdvertisements();
+    	ObjectMapper mapper = new ObjectMapper();
+    	try{
+    		String jsonResponse = mapper.writeValueAsString(advertisments);
+    		return jsonResponse;
+    	}catch(Exception ex){
+    		System.out.println("Failed to write movies list to JSON");
+    		return "{}";
+    	}
     }
 }
