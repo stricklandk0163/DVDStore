@@ -1,5 +1,65 @@
-.center {
-  margin: auto;
-  position: absolute;
-  top: 0; left: 0; bottom: 0; right: 0;
+.sideBarLeft{
+	background-color : #f1f1f1; 
+	border-color : #080808; 
+	border-right: 1px solid #666;
+	width: 300px;
+	max-width: 20%;
+	float: left;
+	height: 100%;
+	padding-top: 10px;
+	padding-left: 10px;
+	overflow-y: auto;
+}
+.queryResultsTable{
+	overflow-y: auto;
+	max-height: 85%; 
+	width: 100%; 
+	
+}
+.sideBarRight{
+	background-color : #f1f1f1; 
+	border-color : #080808; 
+	border-left: 1px solid #666;
+	width: 300px;
+	max-width: 20%;
+	float: right;
+	height: 100%;
+}
+.pageContainer{
+	width : 100%; 
+	height: calc(100% - 50px);
+	postion: absolute;
+}
+.viewPanel{
+	float: left; 
+	width: 60%; 
+	height: 100%;
+	position: relative;
+}
+.titleBar{
+	margin-bottom: 0px !important;
+	border-radius: 0px;
+}
+.filterMainTitle{
+	font-size: 24px;
+}
+.filterSubTitle{
+	font-size: 20px;
+	margin-left: 10px;
+}
+.filterField{
+	font-size: 16px;
+	margin-left: 20px;
+}
+.bigDividerLine{
+	height: 2px;
+	width: 100%;
+	background:#222;
+	 
+}
+.medDividerLine{
+	margin-left: 10px;
+	height: 1px;
+	width: 100%;
+	background:#222;
 }

@@ -1,8 +1,45 @@
-<div class="input-group col-md-6 center">
-	<input type="text" class="form-control input-lg" placeholder="Search Based on Title Or Tags..."/>
-	<span class="input-group-btn">
-	<button class="btn btn-info btn-lg" type="button" ng-click="search('Test abc')">
-		<i class="glyphicon glyphicon-search"></i>
-	</button>
-	</span>
-</div>    
+<!-- Page container -->
+	<div class="sideBarLeft">
+		<div class="filterMainTitle">Filters</div>
+		<div class="bigDividerLine"></div>
+		<div class="filterSubTitle">Ratings</div>
+		<div class="medDividerLine"></div>
+		<div class="filterField" ng-repeat="ratingName in ratings">
+			{{ratingName}} <input type="checkbox" value="{{ratingName}}" ng-checked="selectedRatings.indexOf(ratingName) > -1" ng-click="toggleRating(ratingName)">
+		</div>
+		<div class="filterSubTitle">Genres</div>
+		<div class="medDividerLine"></div>
+		<div class="filterField" ng-repeat="genreName in genres">
+			{{genreName}} <input type="checkbox" value="{{genreName}}" ng-checked="selectedRatings.indexOf(genreName) > -1" ng-click="toggleGenre(genreName)">
+		</div>
+		<!--  -->
+		<div class="filterSubTitle">Location</div>
+		<div class="medDividerLine"></div>
+		<div class="filterField">
+			Zip <input type="text" class="form-control" style="width: 80%" id="zip" ng-model="zipCode">
+			Radius (Miles) <input type="text" class="form-control" style="width: 80%" id="radius" ng-model="radius">
+		</div>
+		
+		
+	</div>
+	<!-- View the routed page (search, list view, ad view) -->
+	<div class="viewPanel">
+		<div style="height:10%">
+			<input type="text" style="margin: 10px auto;  width: 80%;" ng-change="search()" class="form-control input-lg" placeholder="Type To Search For A Movie By Title..." ng-model="searchVal"/>
+		</div>
+		<div class="queryResultsTable">
+			<table class="table">
+				<thead>
+					<th>Title</th>
+					<th>Rating</th>
+					<th>Seller</th>
+				</thead>
+				<tr ng-repeat="ad in ads">
+					<td>{{ad.title}}</td>
+					<td>{{ad.rating}}</td>
+					<td>{{ad.sellerName}}</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div class="sideBarRight"></div>
