@@ -10,7 +10,8 @@
       "sellerName" : "Henry Mckenzie",
       "contact" : "317-555-0138",
       "zipCode" : 37128,
-      "rating" : "R"
+      "rating" : "R",
+	  "price"  : 200.99
     },
     {
       "id" : 1,
@@ -23,7 +24,8 @@
       "sellerName" : "Lola Rodriquez",
       "contact" : "360-555-0142",
       "zipCode" : 65015,
-      "rating" : "R"
+      "rating" : "R",
+	  "price"  : 12.52
     },
     {
       "id" : 2,
@@ -36,7 +38,8 @@
       "sellerName" : "Mabel Bryan",
       "contact" : "202-555-0114",
       "zipCode" : 23693,
-      "rating" : "PG-13"
+      "rating" : "PG-13",
+	  "price"  : 6.66
     },
     {
       "id" : 3,
@@ -49,8 +52,9 @@
       "imdb" : "http://www.imdb.com/title/tt0468569",
       "sellerName" : "Ebony Crawford",
       "contact" : "202-555-0188",
-      "zipCode" : 7652,
-      "rating" : "PG"
+      "zipCode" : 76522,
+      "rating" : "PG",
+	  "price"  : 23.32
     },
     {
       "id" : 4,
@@ -63,7 +67,8 @@
       "sellerName" : "Linda Walsh",
       "contact" : "608-555-0121",
       "zipCode" : 27603,
-      "rating" : "R"
+      "rating" : "R",
+	  "price"  : 62.43
     },
     {
       "id" : 5,
@@ -77,7 +82,8 @@
       "sellerName" : "Elbert Ross",
       "contact" : "608-555-0100",
       "zipCode" : 48504,
-      "rating" : "PG-13"
+      "rating" : "PG-13",
+	  "price"  : 10.50
     },
     {
       "id" : 6,
@@ -90,7 +96,8 @@
       "sellerName" : "Carla Wheeler",
       "contact" : "615-555-0100",
       "zipCode" : 11423,
-      "rating" : "G"
+      "rating" : "G",
+	  "price"  : 5.23
     },
     {
       "id" : 7,
@@ -104,7 +111,8 @@
       "sellerName" : "Inez Ruiz",
       "contact" : "615-555-0131",
       "zipCode" : 1545,
-      "rating" : "R"
+      "rating" : "R",
+	  "price"  : 22.00
     },
     {
       "id" : 8,
@@ -114,17 +122,19 @@
       "sellerName" : "Daniel Roy",
       "contact" : "601-555-0183",
       "zipCode" : 30906,
-      "rating" : "R"
+      "rating" : "R",
+	  "price"  : 13.00
     },
     {
       "id" : 9,
       "title" : "Fight Club",
-      "genre" : "Drama",
+      "genre" : ["Drama"],
       "imdb" : "http://www.imdb.com/title/tt0137523",
       "sellerName" : "Dale Coleman",
       "contact" : "601-555-0124",
       "zipCode" : 21921,
-      "rating" : "R"
+      "rating" : "R",
+	  "price"  : 12.99
     },
     {
       "id" : 10,
@@ -137,7 +147,8 @@
       "sellerName" : "Cecelia Fernandez",
       "contact" : "617-555-0136",
       "zipCode" : 59404,
-      "rating" : "PG-13"
+      "rating" : "PG-13",
+	  "price"  : 19.94
     },
     {
       "id" : 11,
@@ -150,8 +161,9 @@
       "imdb" : "http://www.imdb.com/title/tt0245429",
       "sellerName" : "Willard Gilbert",
       "contact" : "617-555-0124",
-      "zipCode" : 6851,
-      "rating" : "PG"
+      "zipCode" : 68551,
+      "rating" : "PG",
+	  "price"  : 23.88
     },
     {
       "id" : 12,
@@ -165,7 +177,8 @@
       "sellerName" : "Dale Jensen",
       "contact" : "785-555-0120",
       "zipCode" : 48197,
-      "rating" : "G"
+      "rating" : "G",
+	  "price"  : 16.00
     },
     {
       "id" : 13,
@@ -179,7 +192,8 @@
       "sellerName" : "Fannie Payne",
       "contact" : "410-555-0146",
       "zipCode" : 2062,
-      "rating" : "PG-13"
+      "rating" : "PG-13",
+	  "price"  : 14.25
     },
     {
       "id" : 14,
@@ -192,6 +206,342 @@
       "sellerName" : "Penny Ferguson",
       "contact" : "410-555-0180",
       "zipCode" : 11795,
-      "rating" : "R"
+      "rating" : "R",
+	  "price"  : 5.43
+    },
+	{
+      "id" : 15,
+      "title" : "The Room",
+      "genre" : [
+        "Black Comedy",
+        "Drama"
+      ],
+      "imdb" : "http://www.imdb.com/title/tt0368226",
+      "sellerName" : "Tommy Wiseau",
+      "contact" : "415-277-5472",
+      "zipCode" : 94101,
+      "rating" : "R",
+	  "price"  : 2.00
+    },
+	{
+      "id" : 16,
+      "title" : "Troll 2",
+      "genre" : [
+        "Fantasy",
+        "Horror"
+      ],
+      "imdb" : "http://www.imdb.com/title/tt0105643",
+      "sellerName" : "Grandpa Seth",
+      "contact" : "666-392-5552",
+      "zipCode" : 94102,
+      "rating" : "PG-13",
+	  "price"  : 2.45 
+    },
+	{
+      "id" : 17,
+      "title" : "Pineapple Express",
+      "genre" : [
+        "Action",
+        "Comedy"
+      ],
+      "imdb" : "http://www.imdb.com/title/tt0910936",
+      "sellerName" : "Sylas Shaw",
+      "contact" : "492-953-3952",
+      "zipCode" : 39203,
+      "rating" : "R",
+	  "price"  : 9.30
+    },
+	{
+      "id" : 18,
+      "title" : "Jack Reacher: Never Go Back (xX42069FUCKYOUXx Bootleg)",
+      "genre" : [
+        "Action",
+        "Adventure"
+      ],
+      "imdb" : "http://www.imdb.com/title/tt3393786",
+      "sellerName" : "xX42069FUCKYOUXx",
+      "contact" : "555-555-5555",
+      "zipCode" : 94101,
+      "rating" : "PG-13",
+	  "price"  : 500.99
+    },
+	{
+      "id" : 19,
+      "title" : "Boo! A Madea Halloween (1337HotGuy1337 Bootleg)",
+      "genre" : [
+        "Comedy",
+        "Horror"
+      ],
+      "imdb" : "http://www.imdb.com/title/tt5325452",
+      "sellerName" : "1337HotGuy1337",
+      "contact" : "838-882-9937",
+      "zipCode" : 39203,
+      "rating" : "PG-13",
+	  "price"  : 666.00
+    },
+	{
+      "id" : 20,
+      "title" : "Cosmos DVD Set",
+      "genre" : [
+        "Documentary",
+        "Science"
+      ],
+      "imdb" : "http://www.imdb.com/title/tt0081846",
+      "sellerName" : "Yos Horrison",
+      "contact" : "449-938-2323",
+      "zipCode" : 23693,
+      "rating" : "PG",
+	  "price"  : 24.79
+    },
+	{
+      "id" : 21,
+      "title" : "Inferno (Hacked From Ron Howard's iCloud)",
+      "genre" : [
+        "Action",
+        "Adventure"
+      ],
+      "imdb" : "http://www.imdb.com/title/tt3062096",
+      "sellerName" : "Anon420Swag",
+      "contact" : "444-859-3883",
+      "zipCode" : 37128,
+      "rating" : "PG-13",
+	  "price"  : 800.26
+    },
+	{
+      "id" : 22,
+      "title" : "Deepwater Horizon (3k3kd9dk Bootleg)",
+      "genre" : [
+        "Action",
+        "Drama"
+      ],
+      "imdb" : "http://www.imdb.com/title/tt1860357",
+      "sellerName" : "3k3kd9dk",
+      "contact" : "494-394-4004",
+      "zipCode" : 37127,
+      "rating" : "PG-13",
+	  "price"  : 393.01
+    },
+	{
+      "id" : 23,
+      "title" : "Rubber",
+      "genre" : [
+        "Comedy",
+        "Horror"
+      ],
+      "imdb" : "http://www.imdb.com/title/tt1612774",
+      "sellerName" : "Ahlan Jordein",
+      "contact" : "393-333-0293",
+      "zipCode" : 75051,
+      "rating" : "R",
+	  "price"  : 1.00
+    },
+	{
+      "id" : 24,
+      "title" : "The Comedy",
+      "genre" : [
+        "Comedy",
+        "Drama"
+      ],
+      "imdb" : "http://www.imdb.com/title/tt2112293",
+      "sellerName" : "Spagett",
+      "contact" : "608-772-4388",
+      "zipCode" : 53572,
+      "rating" : "Not Rated",
+	  "price"  : 10.00
+    },
+	{
+      "id" : 25,
+      "title" : "Tim and Eric's Billion Dollar Movie",
+      "genre" : [
+        "Comedy"
+      ],
+      "imdb" : "http://www.imdb.com/title/tt1855401",
+      "sellerName" : "Will Walkr",
+      "contact" : "608-339-4943",
+      "zipCode" : 53572,
+      "rating" : "R",
+	  "price"  : 6.66
+    },
+	{
+      "id" : 27,
+      "title" : "The Room",
+      "genre" : [
+        "Black Comedy",
+        "Drama"
+      ],
+      "imdb" : "http://www.imdb.com/title/tt0368226",
+      "sellerName" : "Tommy Wiseau",
+      "contact" : "415-277-5472",
+      "zipCode" : 94101,
+      "rating" : "R",
+	  "price"  : 1.99
+    },
+	{
+      "id" : 28,
+      "title" : "The Room",
+      "genre" : [
+        "Black Comedy",
+        "Drama"
+      ],
+      "imdb" : "http://www.imdb.com/title/tt0368226",
+      "sellerName" : "Tommy Wiseau",
+      "contact" : "415-277-5472",
+      "zipCode" : 94101,
+      "rating" : "R",
+	  "price"  : 1.89
+    },
+	{
+      "id" : 29,
+      "title" : "The Room",
+      "genre" : [
+        "Black Comedy",
+        "Drama"
+      ],
+      "imdb" : "http://www.imdb.com/title/tt0368226",
+      "sellerName" : "Tommy Wiseau",
+      "contact" : "415-277-5472",
+      "zipCode" : 94101,
+      "rating" : "R",
+	  "price"  : 1.50
+    },
+	{
+      "id" : 30,
+      "title" : "The Room",
+      "genre" : [
+        "Black Comedy",
+        "Drama"
+      ],
+      "imdb" : "http://www.imdb.com/title/tt0368226",
+      "sellerName" : "Mark",
+      "contact" : "415-277-5472",
+      "zipCode" : 94101,
+      "rating" : "R",
+	  "price"  : 1.00
+    },
+	{
+      "id" : 31,
+      "title" : "Boo! A Madea Halloween (1337HotGuy1337 Bootleg)",
+      "genre" : [
+        "Comedy",
+        "Horror"
+      ],
+      "imdb" : "http://www.imdb.com/title/tt5325452",
+      "sellerName" : "Tyler Perry",
+      "contact" : "838-882-9937",
+      "zipCode" : 39204,
+      "rating" : "PG-13",
+	  "price"  : 665.00
+    },
+    {
+      "id" : 32,
+      "title" : "Boo! A Madea Halloween (Legit Version)",
+      "genre" : [
+        "Comedy",
+        "Horror"
+      ],
+      "imdb" : "http://www.imdb.com/title/tt5325452",
+      "sellerName" : "Tyler Perry",
+      "contact" : "838-882-9937",
+      "zipCode" : 39203,
+      "rating" : "PG-13",
+	  "price"  : 664.00
+    },
+    {
+      "id" : 33,
+      "title" : "Boo! A Madea Halloween (1337HotGuy1337 Bootleg)",
+      "genre" : [
+        "Comedy",
+        "Horror"
+      ],
+      "imdb" : "http://www.imdb.com/title/tt5325452",
+      "sellerName" : "1337HotGuy1337",
+      "contact" : "838-882-9937",
+      "zipCode" : 39203,
+      "rating" : "PG-13",
+	  "price"  : 700.00
+    },
+	{
+      "id" : 34,
+      "title" : "Troll 2",
+      "genre" : [
+        "Fantasy",
+        "Horror"
+      ],
+      "imdb" : "http://www.imdb.com/title/tt0105643",
+      "sellerName" : "George Lucas",
+      "contact" : "666-392-5552",
+      "zipCode" : 39203,
+      "rating" : "PG-13",
+	  "price"  : 2.46 
+    },
+    {
+      "id" : 35,
+      "title" : "Troll 2",
+      "genre" : [
+        "Fantasy",
+        "Horror"
+      ],
+      "imdb" : "http://www.imdb.com/title/tt0105643",
+      "sellerName" : "Grandpa Seth",
+      "contact" : "666-666-6662",
+      "zipCode" : 94102,
+      "rating" : "PG-13",
+	  "price"  : 2.45 
+    },
+    {
+      "id" : 36,
+      "title" : "Troll 2",
+      "genre" : [
+        "Fantasy",
+        "Horror"
+      ],
+      "imdb" : "http://www.imdb.com/title/tt0105643",
+      "sellerName" : "Grandpa Seth",
+      "contact" : "666-372-5582",
+      "zipCode" : 94102,
+      "rating" : "PG-13",
+	  "price"  : 2.45 
+    },
+    {
+      "id" : 37,
+      "title" : "Troll 2",
+      "genre" : [
+        "Fantasy",
+        "Horror"
+      ],
+      "imdb" : "http://www.imdb.com/title/tt0105643",
+      "sellerName" : "Henna Wylow",
+      "contact" : "666-322-5537",
+      "zipCode" : 68551,
+      "rating" : "PG-13",
+	  "price"  : 6.66 
+    },
+    {
+      "id" : 38,
+      "title" : "Troll 2",
+      "genre" : [
+        "Fantasy",
+        "Horror"
+      ],
+      "imdb" : "http://www.imdb.com/title/tt0105643",
+      "sellerName" : "James Franco",
+      "contact" : "666-392-5522",
+      "zipCode" : 27603,
+      "rating" : "PG-13",
+	  "price"  : 12.41 
+    },
+    {
+      "id" : 39,
+      "title" : "Troll 2",
+      "genre" : [
+        "Fantasy",
+        "Horror"
+      ],
+      "imdb" : "http://www.imdb.com/title/tt0105643",
+      "sellerName" : "Eleine Camryn",
+      "contact" : "666-392-5322",
+      "zipCode" : 94102,
+      "rating" : "PG-13",
+	  "price"  : 2.45 
     }
 ]

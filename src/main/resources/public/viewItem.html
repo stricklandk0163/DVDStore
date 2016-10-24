@@ -1,0 +1,59 @@
+<div class="sideBarLeft"></div>
+<!-- View the list of advertisments from a given search -->
+<div class="viewPanel" style="padding: 20px; overflow-y: auto;">
+	<div class="mainTitle">{{ad.title}} <button type="button" class="btn btn-primary" ng-click="goBack()">Go Back</button><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#reportAdModal">Report</button></div>
+	<div class="bigDividerLine"></div>
+	<br />
+	<div class="movieInfoContainer">
+		<!-- Movie pictore from imdb -->
+		<img src="{{ad.imdbPoster}}" class="image"/>
+		<!-- Movie and sale info -->
+		<div class="movieInfo">
+			<b>Price:</b> ${{ad.price.toFixed(2);}}
+			<br />
+			<b>Seller:</b> {{ad.sellerName}}
+			<br />
+			<b>Phone Number:</b> {{ad.contact}}
+			<br />
+			<b>Zip Code:</b> {{ad.zipCode}}
+			<br />
+			<b>Genre:</b> {{ad.genre}}
+			<br />
+			<b>Actors:</b> {{ad.actors}}
+			<br />
+			<b>Year:</b> {{ad.year}}
+			<br />
+			<b>Rating:</b> {{ad.rating}}
+			<br />
+			<b>IMDB Link:</b> <a href="{{ad.imdbLink}}">{{ad.imdbLink}}</a>
+			<br />
+			<b>IMDB Score:</b> {{ad.imdbScore}}
+			<br />
+			<b>Plot:</b> {{ad.plot}}
+		</div>
+	</div>
+</div>
+<div class="sideBarRight"></div>
+
+<!-- Report ad modal -->
+<div class="modal fade" id="reportAdModal" role="dialog">
+	<div class="modal-dialog">
+  		<!-- Modal content-->
+    	<div class="modal-content">
+    		<div class="modal-header">
+        		<button type="button" class="close" data-dismiss="modal">&times;</button>
+         		<h4 class="modal-title">Report</h4>
+       		</div>
+       		<div class="modal-body">
+         		<div class="form-group">
+  					<label for="comment">Reason For Reporting:</label>
+  					<textarea class="form-control" rows="5" id="comment"></textarea>
+				</div>
+       		</div>
+       		<div class="modal-footer">
+        		<button type="button" class="btn btn-default" data-dismiss="modal">Report</button>
+        		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       		</div>
+       	</div>
+	</div>
+</div>

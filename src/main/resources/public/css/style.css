@@ -16,6 +16,23 @@
 	width: 100%; 
 	
 }
+.image{
+	border: 1px solid #333333 !important;
+	max-width: 25%;
+	max-height: 100%;
+	float:left;
+}
+.movieInfo{
+	padding-left: 10px;
+	max-height: 100%;
+	width: 75%;
+	float:right;
+	overflow-y: auto;
+}
+.movieInfoContainer{
+	margin-left: 10px;
+	font-size: 16px;
+}
 .sideBarRight{
 	background-color : #f1f1f1; 
 	border-color : #080808; 
@@ -40,14 +57,14 @@
 	margin-bottom: 0px !important;
 	border-radius: 0px;
 }
-.filterMainTitle{
+.mainTitle{
 	font-size: 24px;
 }
-.filterSubTitle{
+.subTitle{
 	font-size: 20px;
 	margin-left: 10px;
 }
-.filterField{
+.field{
 	font-size: 16px;
 	margin-left: 20px;
 }
@@ -63,3 +80,4 @@
 	width: 100%;
 	background:#222;
 }
+

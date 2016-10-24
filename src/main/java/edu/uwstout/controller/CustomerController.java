@@ -1,6 +1,8 @@
 package edu.uwstout.controller;
 
 import java.util.HashSet;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import edu.uwstout.helpers.*;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,11 +24,12 @@ public class CustomerController {
      */
     @RequestMapping(value = "/queryForList" , method = RequestMethod.POST)
     public @ResponseBody String queryForList(@RequestBody FilterQuery filterQuery) {
-    	
+    	//Get all advertisements and filter off those not matching filter
     	List<Advertisement> advertisements = (AdvertisementJSONReader.readAdvertisements().stream())
     										 .filter(advertisement -> matchesFilterQuery(filterQuery, advertisement))
     										 .collect(Collectors.toList());
     	
+    	//Send list response
     	ObjectMapper mapper = new ObjectMapper();
     	try{
     		String jsonResponse = mapper.writeValueAsString(advertisements);
@@ -42,13 +45,16 @@ public class CustomerController {
      */
     @RequestMapping(value = "/ratings" , method = RequestMethod.GET)
     public @ResponseBody String ratings() {
+    	//Get all advertisements
     	List<Advertisement> advertisements = AdvertisementJSONReader.readAdvertisements();
     	
+    	//Get all unique ratings for advertisements
     	HashSet<String> ratings = new HashSet<String>();
     	for(Advertisement advertisement : advertisements){
     		ratings.add(advertisement.getRating());
     	}
     	
+    	//Send ratings response
     	ObjectMapper mapper = new ObjectMapper();
     	try{
     		String jsonResponse = mapper.writeValueAsString(ratings);
@@ -62,20 +68,25 @@ public class CustomerController {
     /*
      * Get an advertisement by id
      */
-    @RequestMapping(value = "/getAd" , method = RequestMethod.POST)
-    public @ResponseBody String getAd(@RequestBody String id) {
+    @RequestMapping(value = "/getAdById" , method = RequestMethod.POST)
+    public @ResponseBody String getAdById(@RequestBody int id) {
+    	//Get all advertisements
     	List<Advertisement> advertisements = AdvertisementJSONReader.readAdvertisements();
     	
-    	//Todo: get the advertisement matching the id passed id string
-    	Advertisement advertisment = null;
+    	//Send the advertisement with the matching id in a response
     	ObjectMapper mapper = new ObjectMapper();
-    	try{
-    		String jsonResponse = mapper.writeValueAsString(advertisment);
-    		return jsonResponse;
-    	}catch(Exception ex){
-    		System.out.println("Failed to ratings list to JSON");
-    		return "{}";
+    	for(Advertisement advertisement : advertisements){
+    		if(advertisement.getId() == id){
+    			try{
+    	    		String jsonResponse = mapper.writeValueAsString(advertisement);
+    	    		return jsonResponse;
+    	    	}catch(Exception ex){
+    	    		System.out.println("Failed to ratings list to JSON");
+    	    		return "{}";
+    	    	}
+    		}
     	}
+    	return "{}";
     }
     
     /*
@@ -84,17 +95,17 @@ public class CustomerController {
     @RequestMapping(value = "/genres" , method = RequestMethod.GET)
     public @ResponseBody String genres() {
     	List<Advertisement> advertisements = AdvertisementJSONReader.readAdvertisements();
-    	
     	HashSet<String> genres = new HashSet<String>();
     	for(Advertisement advertisement : advertisements){
     		for(String genre : advertisement.getGenre()){
     			genres.add(genre);
     		}
     	}
-    	
+    	List<String> sortedGenres = new ArrayList<String>(genres);
+    	Collections.sort(sortedGenres);
     	ObjectMapper mapper = new ObjectMapper();
     	try{
-    		String jsonResponse = mapper.writeValueAsString(genres);
+    		String jsonResponse = mapper.writeValueAsString(sortedGenres);
     		return jsonResponse;
     	}catch(Exception ex){
     		System.out.println("Failed to ratings list to JSON");

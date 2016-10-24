@@ -1,28 +1,29 @@
 <!-- Page container -->
 	<div class="sideBarLeft">
-		<div class="filterMainTitle">Filters</div>
+		<div class="mainTitle">Filters</div>
 		<div class="bigDividerLine"></div>
-		<div class="filterSubTitle">Ratings</div>
+		<!-- Rating filters -->
+		<div class="subTitle">Ratings</div>
 		<div class="medDividerLine"></div>
-		<div class="filterField" ng-repeat="ratingName in ratings">
+		<div class="field" ng-repeat="ratingName in ratings">
 			{{ratingName}} <input type="checkbox" value="{{ratingName}}" ng-checked="selectedRatings.indexOf(ratingName) > -1" ng-click="toggleRating(ratingName)">
 		</div>
-		<div class="filterSubTitle">Genres</div>
+		<!-- Genre filters -->
+		<div class="subTitle">Genres</div>
 		<div class="medDividerLine"></div>
-		<div class="filterField" ng-repeat="genreName in genres">
+		<div class="field" ng-repeat="genreName in genres">
 			{{genreName}} <input type="checkbox" value="{{genreName}}" ng-checked="selectedRatings.indexOf(genreName) > -1" ng-click="toggleGenre(genreName)">
 		</div>
-		<!--  -->
-		<div class="filterSubTitle">Location</div>
+		<!-- Location filters -->
+		<div class="subTitle">Location</div>
 		<div class="medDividerLine"></div>
-		<div class="filterField">
-			Zip <input type="text" class="form-control" style="width: 80%" id="zip" ng-model="zipCode">
-			Radius (Miles) <input type="text" class="form-control" style="width: 80%" id="radius" ng-model="radius">
+		<div class="field">
+			Zip <input type="text" class="form-control" style="width: 80%" id="zip" ng-model="zipCode" ng-change="search()">
+			Radius (Miles) <input type="text" class="form-control" style="width: 80%" id="radius" ng-model="radius" ng-change="search()">
 		</div>
-		
-		
 	</div>
-	<!-- View the routed page (search, list view, ad view) -->
+	
+	<!-- View the list of advertisments from a given search -->
 	<div class="viewPanel">
 		<div style="height:10%">
 			<input type="text" style="margin: 10px auto;  width: 80%;" ng-change="search()" class="form-control input-lg" placeholder="Type To Search For A Movie By Title..." ng-model="searchVal"/>
@@ -32,12 +33,17 @@
 				<thead>
 					<th>Title</th>
 					<th>Rating</th>
+					<th>Price</th>
 					<th>Seller</th>
+					<th>View Ad</th>
 				</thead>
 				<tr ng-repeat="ad in ads">
 					<td>{{ad.title}}</td>
 					<td>{{ad.rating}}</td>
+					<td>${{ad.price.toFixed(2)}}</td>
 					<td>{{ad.sellerName}}</td>
+					<td><button type="button" class="btn btn-primary" ng-click="openAd(ad.id)">View Ad</button></td>
+					
 				</tr>
 			</table>
 		</div>
