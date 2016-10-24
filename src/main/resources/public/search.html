@@ -6,20 +6,19 @@
 		<div class="subTitle">Ratings</div>
 		<div class="medDividerLine"></div>
 		<div class="field" ng-repeat="ratingName in ratings">
-			{{ratingName}} <input type="checkbox" value="{{ratingName}}" ng-checked="selectedRatings.indexOf(ratingName) > -1" ng-click="toggleRating(ratingName)">
+			{{ratingName}} <input type="checkbox" value="{{ratingName}}" checked ng-checked="selectedRatings.indexOf(ratingName) > -1" ng-click="toggleRating(ratingName)">
 		</div>
 		<!-- Genre filters -->
 		<div class="subTitle">Genres</div>
 		<div class="medDividerLine"></div>
 		<div class="field" ng-repeat="genreName in genres">
-			{{genreName}} <input type="checkbox" value="{{genreName}}" ng-checked="selectedRatings.indexOf(genreName) > -1" ng-click="toggleGenre(genreName)">
+			{{genreName}} <input type="checkbox" value="{{genreName}}" checked ng-checked="selectedGenres.indexOf(genreName) > -1" ng-click="toggleGenre(genreName)">
 		</div>
 		<!-- Location filters -->
 		<div class="subTitle">Location</div>
 		<div class="medDividerLine"></div>
 		<div class="field">
 			Zip <input type="text" class="form-control" style="width: 80%" id="zip" ng-model="zipCode" ng-change="search()">
-			Radius (Miles) <input type="text" class="form-control" style="width: 80%" id="radius" ng-model="radius" ng-change="search()">
 		</div>
 	</div>
 	
@@ -43,7 +42,6 @@
 					<td>${{ad.price.toFixed(2)}}</td>
 					<td>{{ad.sellerName}}</td>
 					<td><button type="button" class="btn btn-primary" ng-click="openAd(ad.id)">View Ad</button></td>
-					
 				</tr>
 			</table>
 		</div>

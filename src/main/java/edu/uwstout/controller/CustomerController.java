@@ -118,8 +118,17 @@ public class CustomerController {
      * Checks if advertisement matches filter 
      */
     private boolean matchesFilterQuery(FilterQuery filter, Advertisement ad){
-    	//Todo: get filtering working
-    	return ad.getTitle().toLowerCase().contains(filter.getTitleQuery().toLowerCase());
+    	boolean matchesGenre = false;
+    	boolean matchesRating = filter.getRatingQuery().contains(ad.getRating());
+    	boolean matchesTitleFilter = filter.getTitleQuery() == null || filter.getTitleQuery().equals("") || ad.getTitle().toLowerCase().contains(filter.getTitleQuery().toLowerCase());
+    	boolean matchesZipCodeFilter = filter.getZipCode() == null || filter.getZipCode().equals("") || ad.getTitle().contains(filter.getZipCode());
+    	for(String genre : ad.getGenre()){
+    		if(filter.getGenreQuery().contains(genre)){
+    			matchesGenre = true;
+    		}
+    	}
+    	
+    	return matchesGenre && matchesRating && matchesTitleFilter && matchesZipCodeFilter;
     	
     }
     

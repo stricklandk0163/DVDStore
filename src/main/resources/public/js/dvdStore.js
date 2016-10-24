@@ -93,7 +93,6 @@ app.controller("SearchCtrl", function($scope, $http, $location){
 	$scope.selectedRatings = [];
 	$scope.selectedGenres = [];
 	$scope.zipCode = "";
-	$scope.radius = "";
 	
 	//Gather all search info and perform search
 	$scope.search = function() {
@@ -104,10 +103,7 @@ app.controller("SearchCtrl", function($scope, $http, $location){
 				"titleQuery": $scope.searchVal,
 				"genreQuery": $scope.selectedGenres,
 				"ratingQuery": $scope.selectedRatings,
-				"locationQuery": {
-					"zipCode" : $scope.zipCode,
-					"radius" : $scope.radius
-				}
+				"zipCode": $scope.zipCode
 			}
 		}).then(function successCallback(response) {
 		    $scope.ads = response.data;
@@ -134,7 +130,7 @@ app.controller("SearchCtrl", function($scope, $http, $location){
 		else {
 			$scope.selectedGenres.push(genreName);
 		}
-		search();
+		$scope.search();
 	};
 	
 	// Logic for toggling rating filters
@@ -150,7 +146,7 @@ app.controller("SearchCtrl", function($scope, $http, $location){
 		else {
 			$scope.selectedRatings.push(ratingName);
 		}
-		search();
+		$scope.search();
 	};
 	
 	//Get all possible ratings
@@ -160,6 +156,9 @@ app.controller("SearchCtrl", function($scope, $http, $location){
 			url: '/ratings',
 		}).then(function successCallback(response) {
 		    $scope.ratings = response.data;
+		    //Clone response data
+		    $scope.selectAllRatings();
+		    $scope.search();
 		}, function errorCallback(response) {
 		    // called asynchronously if an error occurs
 		    // or server returns response with an error status.
@@ -173,14 +172,32 @@ app.controller("SearchCtrl", function($scope, $http, $location){
 			url: '/genres',
 		}).then(function successCallback(response) {
 		    $scope.genres = response.data;
+		    //Clone response data
+		    $scope.selectAllGenres();
+		    $scope.search();
 		}, function errorCallback(response) {
 		    // called asynchronously if an error occurs
 		    // or server returns response with an error status.
 		});
 	};
 	
+	$scope.deselectAllGenres = function(){
+		$scope.selectedGenres = [];
+	}
+	
+	$scope.selectAllGenres = function(){
+		$scope.selectedGenres = JSON.parse(JSON.stringify($scope.genres));
+	}
+	
+	$scope.deselectAllRatings = function(){
+		$scope.selectedRatings = [];
+	}
+	
+	$scope.selectAllRatings = function(){
+		$scope.selectedRatings = JSON.parse(JSON.stringify($scope.ratings))
+	}
+	
 	//Init page values
-	$scope.search();
 	$scope.getRatings();
 	$scope.getGenres();
 });

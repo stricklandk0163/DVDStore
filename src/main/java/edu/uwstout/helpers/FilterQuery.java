@@ -4,7 +4,7 @@ import java.util.List;
 
 public class FilterQuery {
 	private String titleQuery;
-	private LocationQuery locationQuery;
+	private String zipCode;
 	private List<String> ratingQuery;
 	private List<String> genreQuery;
 	public String getTitleQuery() {
@@ -12,12 +12,6 @@ public class FilterQuery {
 	}
 	public void setTitleQuery(String titleQuery) {
 		this.titleQuery = titleQuery;
-	}
-	public LocationQuery getLocationQuery() {
-		return locationQuery;
-	}
-	public void setLocationQuery(LocationQuery locationQuery) {
-		this.locationQuery = locationQuery;
 	}
 	public List<String> getRatingQuery() {
 		return ratingQuery;
@@ -30,6 +24,12 @@ public class FilterQuery {
 	}
 	public void setGenreQuery(List<String> genreQuery) {
 		this.genreQuery = genreQuery;
+	}
+	public String getZipCode() {
+		return zipCode;
+	}
+	public void setZipCode(String zipCode) {
+		this.zipCode = zipCode;
 	}
 	
 }
