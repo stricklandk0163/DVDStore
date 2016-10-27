@@ -121,7 +121,7 @@ public class CustomerController {
     	boolean matchesGenre = false;
     	boolean matchesRating = filter.getRatingQuery().contains(ad.getRating());
     	boolean matchesTitleFilter = filter.getTitleQuery() == null || filter.getTitleQuery().equals("") || ad.getTitle().toLowerCase().contains(filter.getTitleQuery().toLowerCase());
-    	boolean matchesZipCodeFilter = filter.getZipCode() == null || filter.getZipCode().equals("") || ad.getTitle().contains(filter.getZipCode());
+    	boolean matchesZipCodeFilter = filter.getZipCode() == null || filter.getZipCode().equals("") || ad.getZipCode().contains(filter.getZipCode());
     	for(String genre : ad.getGenre()){
     		if(filter.getGenreQuery().contains(genre)){
     			matchesGenre = true;
