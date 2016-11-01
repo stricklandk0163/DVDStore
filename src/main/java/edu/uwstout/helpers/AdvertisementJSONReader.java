@@ -16,10 +16,7 @@ public class AdvertisementJSONReader {
 		try{
 			ObjectMapper mapper = new ObjectMapper();
 			mapper.enable(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY);
-			return Arrays.asList(mapper.readValue(new File(AdvertisementJSONReader.class.getResource("/ads.json").toURI()), Advertisement[].class));
-		}
-		catch(URISyntaxException ex){
-			System.out.println("Bad file path to json movie file");
+			return Arrays.asList(mapper.readValue(AdvertisementJSONReader.class.getResourceAsStream("/ads.json"), Advertisement[].class));
 		}
 		catch(JsonParseException ex){
 			System.out.println("Could not parse the json file");
